@@ -83,14 +83,6 @@
         <mxCell id="E4silt5lnDGHWhWXbuNp-21" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Authentification" vertex="1">
           <mxGeometry height="80" width="120" x="440" y="440" as="geometry" />
         </mxCell>
-        <mxCell id="E4silt5lnDGHWhWXbuNp-23" edge="1" parent="1" source="E4silt5lnDGHWhWXbuNp-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;" target="E4silt5lnDGHWhWXbuNp-20">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="120" y="430" />
-              <mxPoint x="120" y="290" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="E4silt5lnDGHWhWXbuNp-34" edge="1" parent="1" source="E4silt5lnDGHWhWXbuNp-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.628;entryDx=0;entryDy=0;entryPerimeter=0;" target="E4silt5lnDGHWhWXbuNp-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -98,10 +90,14 @@
           <mxGeometry height="80" width="120" x="170" y="590" as="geometry" />
         </mxCell>
         <mxCell id="E4silt5lnDGHWhWXbuNp-43" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=none;" value="" vertex="1">
-          <mxGeometry height="660" width="660" x="100" y="20" as="geometry" />
+          <mxGeometry height="670" width="670" x="90" y="20" as="geometry" />
         </mxCell>
         <mxCell id="E4silt5lnDGHWhWXbuNp-45" edge="1" parent="1" source="E4silt5lnDGHWhWXbuNp-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
           <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="70" />
+              <mxPoint x="110" y="70" />
+            </Array>
             <mxPoint x="160" y="70.16" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -110,6 +106,16 @@
         </mxCell>
         <mxCell id="E4silt5lnDGHWhWXbuNp-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=18;" value="Catalogue de formation" vertex="1">
           <mxGeometry height="30" width="210" x="550" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="E4silt5lnDGHWhWXbuNp-49" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="290" />
+              <mxPoint x="110" y="70" />
+            </Array>
+            <mxPoint x="160" y="290" as="sourcePoint" />
+            <mxPoint x="70" y="70" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
