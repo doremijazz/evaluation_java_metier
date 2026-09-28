@@ -1,6 +1,6 @@
 package fr.model;
 
-public class course {
+public class Course {
 	private int idCourse;
 	private String name;
 	private String description;
@@ -9,7 +9,7 @@ public class course {
 	private boolean distanciel;
 	private double price;
 	
-	public course(int idCourse, String name, String description, int duration, boolean presentiel, boolean distanciel,
+	public Course(int idCourse, String name, String description, int duration, boolean presentiel, boolean distanciel,
 			double price) {
 		super();
 		this.idCourse = idCourse;
