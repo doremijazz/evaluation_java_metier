@@ -100,6 +100,9 @@
             <mxPoint x="442.1999999999999" y="625.9739999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-64" edge="1" parent="1" source="KRUOdRMxQwHF8MQmDy5i-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="KRUOdRMxQwHF8MQmDy5i-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="KRUOdRMxQwHF8MQmDy5i-32" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
           <mxGeometry height="134" width="160" x="22" y="222" as="geometry" />
         </mxCell>
@@ -166,6 +169,27 @@
         </mxCell>
         <mxCell id="KRUOdRMxQwHF8MQmDy5i-56" parent="1" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" value="1" vertex="1">
           <mxGeometry height="26" width="80" x="240" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-60" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Adress" vertex="1">
+          <mxGeometry height="88" width="160" x="22" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-61" parent="KRUOdRMxQwHF8MQmDy5i-60" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- street : String&lt;div&gt;- city : String&lt;/div&gt;&lt;div&gt;- postal_code :String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-62" parent="KRUOdRMxQwHF8MQmDy5i-60" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-65" parent="1" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" value="take_place" vertex="1">
+          <mxGeometry height="26" width="80" x="110" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-66" edge="1" parent="1" style="shape=mxgraph.arrows2.wedgeArrow;html=1;bendable=0;startWidth=7;fillColor=strokeColor;defaultFillColor=invert;defaultGradientColor=invert;rounded=0;" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="130" y="208" as="sourcePoint" />
+            <mxPoint x="130" y="178" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KRUOdRMxQwHF8MQmDy5i-67" parent="1" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" value="1" vertex="1">
+          <mxGeometry height="26" width="80" x="40" y="196" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
