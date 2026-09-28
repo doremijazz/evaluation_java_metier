@@ -16,7 +16,7 @@
         <mxCell id="E4silt5lnDGHWhWXbuNp-7" edge="1" parent="1" source="E4silt5lnDGHWhWXbuNp-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=block;endFill=0;" target="E4silt5lnDGHWhWXbuNp-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="E4silt5lnDGHWhWXbuNp-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Utilisateur" vertex="1">
+        <mxCell id="E4silt5lnDGHWhWXbuNp-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Acheteur" vertex="1">
           <mxGeometry height="60" width="30" x="40" y="400" as="geometry" />
         </mxCell>
         <mxCell id="E4silt5lnDGHWhWXbuNp-3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="invité" vertex="1">
