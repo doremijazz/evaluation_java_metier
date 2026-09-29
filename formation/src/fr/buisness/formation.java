@@ -62,6 +62,18 @@ public class formation {
 		display(courses);
 		
 	}
+	public void by_modality(String modality) {
+		List<Course> courses = new ArrayList<>();
+		for (Course currentCourse : Course_dao.getAll()) {
+			if (currentCourse.isPresentiel() && modality.contains("presentiel")){
+				courses.add(currentCourse);
+			}else if (currentCourse.isDistanciel() && modality.contains("distanciel")){
+				courses.add(currentCourse);
+			}
+		}
+		System.out.println("\nListe des cours avec en " + modality + " : ");
+		display(courses);
+	}
 	public void display(List<Course> courses) {
 		
 		List<String> headersList = Arrays.asList("ID", "NAME", "DESCRIPTION", "DURATION", "PRESENTIEL", "DISTANCIEL", "PRICE");
