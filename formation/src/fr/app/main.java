@@ -11,11 +11,20 @@ public class main {
 		
 		formation formation = new formation();
 		
+		System.out.println("################################");
+		System.out.println("           TEST DAO             ");
+		System.out.println("################################");
 		formation.create(course_1);
 		formation.read(course_1);
 		formation.readAll();
 		formation.update(course_1);
 		formation.delete(course_1);
+		
+		System.out.println("################################");
+		System.out.println("           TEST FILTRE            ");
+		System.out.println("################################");
+		formation.by_key_word("web");
+		formation.by_key_word("objet");
 
 	}
 }
