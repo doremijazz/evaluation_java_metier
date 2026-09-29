@@ -89,9 +89,9 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [getIdCourse()=" + getIdCourse() + ", getName()=" + getName() + ", getDescription()="
-				+ getDescription() + ", getDuration()=" + getDuration() + ", isPresentiel()=" + isPresentiel()
-				+ ", isDistanciel()=" + isDistanciel() + ", getPrice()=" + getPrice() + "]";
+		return "Course " + getIdCourse() + "-> Titre :" + getName() + "/ Description :"
+				+ getDescription() + "/ Durée : " + getDuration() + "/ Est en presentiel : " + isPresentiel()
+				+ "/ Est en distanciel : " + isDistanciel() + "/ Prix" + getPrice();
 	}
 	
 }
