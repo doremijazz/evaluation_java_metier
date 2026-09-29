@@ -49,7 +49,32 @@ public class CourseDao extends Dao<Course> {
 	}
 
 	public int create(Course course) {
-		// TODO Auto-generated method stub
+		String sql = "INSERT INTO f_formation (co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price) VALUES (?,?,?,?,?,?)";
+		try(Connection connection = getconnection();
+				PreparedStatement statement = connection.prepareStatement(sql,
+						Statement.RETURN_GENERATED_KEYS)){
+			statement.setString(1, course.getName());
+			statement.setString(2, course.getDescription());
+			statement.setInt(3, course.getDuration());
+			statement.setBoolean(4, course.isPresentiel());
+			statement.setBoolean(5, course.isDistanciel());
+			statement.setDouble(6, course.getPrice());
+			
+int 		rows = statement.executeUpdate();
+			
+			if (rows == 1){
+				try (ResultSet keys = statement.getGeneratedKeys()){
+					if (keys.next()) {
+						course.setIdCourse(keys.getInt(1));
+					}
+					
+				}
+				return course.getIdCourse();
+			}
+			
+		}catch (SQLException exception) {
+			System.err.println("Erreur lors de la creation du cours en db : " + exception.getMessage());
+		}
 		return 0;
 	}
 
