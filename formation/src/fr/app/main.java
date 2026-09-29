@@ -25,6 +25,9 @@ public class main {
 		System.out.println("################################");
 		formation.by_key_word("web");
 		formation.by_key_word("objet");
+		formation.by_modality("presentiel");
+		formation.by_modality("distanciel");
+		formation.by_modality("presentiel et distanciel");
 
 	}
 }
