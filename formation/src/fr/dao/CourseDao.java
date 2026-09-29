@@ -34,7 +34,17 @@ public class CourseDao extends Dao<Course> {
 
 	@Override
 	public Course getById(int id) {
-		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM f_course WHERE co_id_course = ?";
+		try(Connection connection = getconnection();
+				PreparedStatement statement = connection.prepareStatement(sql)){
+			statement.setInt(1, id);
+			try(ResultSet result = statement.executeQuery()){
+				return createCourseFromResult(result);
+			}
+		}catch (SQLException exception) {
+			System.err.println("Erreur lors de la lecture du cours : " + exception.getMessage());
+		}
+		
 		return null;
 	}
 
