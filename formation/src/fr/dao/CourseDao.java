@@ -31,6 +31,7 @@ public class CourseDao extends Dao<Course> {
 		return null;
 	}
 
+
 	@Override
 	public Course getById(int id) {
 		// TODO Auto-generated method stub
@@ -54,6 +55,9 @@ public class CourseDao extends Dao<Course> {
 		return false;
 	}
 
-	
+	private Course createCourseFromResult(ResultSet result) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
