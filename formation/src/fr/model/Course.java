@@ -21,6 +21,16 @@ public class Course {
 		this.price = price;
 	}
 
+	public Course(String name, String description, int duration, boolean presentiel, boolean distanciel,
+			double price) {
+		this.name = name;
+		this.description = description;
+		this.duration = duration;
+		this.presentiel = presentiel;
+		this.distanciel = distanciel;
+		this.price = price;
+	}
+
 	public int getIdCourse() {
 		return idCourse;
 	}
