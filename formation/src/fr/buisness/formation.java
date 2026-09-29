@@ -38,9 +38,9 @@ public class formation {
 			course.addAll(Arrays.asList(String.valueOf(currentCourse.getIdCourse()), currentCourse.getName(), currentCourse.getDescription(), String.valueOf(currentCourse.getDuration()), String.valueOf(currentCourse.isPresentiel()),  String.valueOf(currentCourse.isDistanciel()),  String.valueOf(currentCourse.getPrice())));
 			rowsList.add(course);
 		}
-		Board board = new Board(150);
+		Board board = new Board(250);
 		Table table = new Table(board, 150, headersList, rowsList);
-		List<Integer> colWidthsListEdited = Arrays.asList(10, 10, 30, 10, 10, 10, 10);
+		List<Integer> colWidthsListEdited = Arrays.asList(10, 10, 60, 10, 10, 10, 10);
 		table.setGridMode(Table.GRID_FULL).setColWidthsList(colWidthsListEdited);
 		List<Integer> colAlignList = Arrays.asList(
 			    Block.DATA_CENTER, 
