@@ -70,11 +70,11 @@ public class formation {
             boolean isPresentiel = currentCourse.isPresentiel();
             boolean isDistanciel = currentCourse.isDistanciel();
 
-            if (isPresentiel && !isDistanciel && modality.contains("presentiel")) {
+            if (isPresentiel && modality.equalsIgnoreCase("presentiel")) {
             	courses.add(currentCourse);
-            } else if (!isPresentiel && isDistanciel && modality.contains("distanciel")) {
+            } else if (isDistanciel && modality.equalsIgnoreCase("distanciel")) {
             	courses.add(currentCourse);
-            } else if (isPresentiel && isDistanciel && modality.contains("presentiel et distanciel")) {
+            } else if (isPresentiel && isDistanciel && modality.equalsIgnoreCase("presentiel et distanciel")) {
             	courses.add(currentCourse);
             }
 		}
