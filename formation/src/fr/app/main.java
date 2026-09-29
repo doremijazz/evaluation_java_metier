@@ -17,15 +17,15 @@ public class main {
 		System.out.println("\n Lecture d'un course de la db : " + course_2);
 		
 		//READ ALL
-		System.out.println("\n Liste des articles : ");
+		System.out.println("\n Liste des cours : ");
 		for(Course currentCourse : Course_dao.getAll()) {
 			System.out.println(currentCourse);
 		}
 		
 		//UPDATE
-		Course course_3 = new Course("name_modif", "description_modif", 30, false, true, 550.50);
+		Course course_3 = new Course(course_1.getIdCourse(), "java", "description2", 30, false, true, 550.50);
 		boolean sucess_1 = Course_dao.update(course_3);
-		System.out.println("MAJ d'un article dans la db : " + sucess_1 + "Course : " + Course_dao.getById(course_1.getIdCourse()));
+		System.out.println("MAJ d'un article dans la db : " + sucess_1 + "Course : " + Course_dao.getById(course_3.getIdCourse()));
 		
 		//DELETE
 		boolean sucess_2 = Course_dao.delete(course_1.getIdCourse());
