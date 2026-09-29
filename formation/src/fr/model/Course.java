@@ -86,8 +86,12 @@ public class Course {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Course [getIdCourse()=" + getIdCourse() + ", getName()=" + getName() + ", getDescription()="
+				+ getDescription() + ", getDuration()=" + getDuration() + ", isPresentiel()=" + isPresentiel()
+				+ ", isDistanciel()=" + isDistanciel() + ", getPrice()=" + getPrice() + "]";
+	}
 	
 }
