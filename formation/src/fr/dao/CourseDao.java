@@ -34,12 +34,14 @@ public class CourseDao extends Dao<Course> {
 
 	@Override
 	public Course getById(int id) {
-		String sql = "SELECT * FROM f_course WHERE co_id_course = ?";
+		String sql = "SELECT co_id_course, co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price FROM f_course WHERE co_id_course = ?";
 		try(Connection connection = getconnection();
 				PreparedStatement statement = connection.prepareStatement(sql)){
 			statement.setInt(1, id);
 			try(ResultSet result = statement.executeQuery()){
-				return createCourseFromResult(result);
+				if(result.next()) {
+					return createCourseFromResult(result);
+				}
 			}
 		}catch (SQLException exception) {
 			System.err.println("Erreur lors de la lecture du cours : " + exception.getMessage());
@@ -60,7 +62,7 @@ public class CourseDao extends Dao<Course> {
 			statement.setBoolean(5, course.isDistanciel());
 			statement.setDouble(6, course.getPrice());
 			
-int 		rows = statement.executeUpdate();
+			int rows = statement.executeUpdate();
 			
 			if (rows == 1){
 				try (ResultSet keys = statement.getGeneratedKeys()){
@@ -80,7 +82,7 @@ int 		rows = statement.executeUpdate();
 
 	@Override
 	public boolean update(Course course) {
-		String sql = "UPDATE f_course SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ?";
+		String sql = "UPDATE f_course SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ? WHERE co_id_course = ?";
 		try(Connection connection = getconnection();
 				PreparedStatement statement = connection.prepareStatement(sql)){
 			statement.setString(1, course.getName());
@@ -89,6 +91,7 @@ int 		rows = statement.executeUpdate();
 			statement.setBoolean(4, course.isPresentiel());
 			statement.setBoolean(5, course.isDistanciel());
 			statement.setDouble(6, course.getPrice());
+			statement.setInt(7, course.getIdCourse());
 			
 			try(ResultSet result = statement.executeQuery()){
 				if (result.next()) {
@@ -128,7 +131,7 @@ int 		rows = statement.executeUpdate();
 
 	private Course createCourseFromResult(ResultSet result) throws SQLException {
 		return new Course(
-				result.getInt("co_id_coourse"),
+				result.getInt("co_id_course"),
 				result.getString("co_name"),
 				result.getString("co_description"),
 				result.getInt("co_duration"),
