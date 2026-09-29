@@ -80,8 +80,28 @@ int 		rows = statement.executeUpdate();
 
 	@Override
 	public boolean update(Course course) {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "UPDATE f_formation SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ?";
+		try(Connection connection = getconnection();
+				PreparedStatement statement = connection.prepareStatement(sql)){
+			statement.setString(1, course.getName());
+			statement.setString(2, course.getDescription());
+			statement.setInt(3, course.getDuration());
+			statement.setBoolean(4, course.isPresentiel());
+			statement.setBoolean(5, course.isDistanciel());
+			statement.setDouble(6, course.getPrice());
+			
+			try(ResultSet result = statement.executeQuery()){
+				if (result.next()) {
+					createCourseFromResult(result);
+					
+				}
+				return true;
+			}
+			
+		}catch (SQLException exception) {
+			System.err.println("Erreur lors de la MAJ du cours : " + exception.getMessage());
+			return false;
+		}
 	}
 
 	@Override
