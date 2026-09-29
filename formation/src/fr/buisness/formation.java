@@ -42,7 +42,18 @@ public class formation {
 		Table table = new Table(board, 150, headersList, rowsList);
 		List<Integer> colWidthsListEdited = Arrays.asList(10, 10, 30, 10, 10, 10, 10);
 		table.setGridMode(Table.GRID_FULL).setColWidthsList(colWidthsListEdited);
+		List<Integer> colAlignList = Arrays.asList(
+			    Block.DATA_CENTER, 
+			    Block.DATA_CENTER, 
+			    Block.DATA_CENTER, 
+			    Block.DATA_CENTER, 
+			    Block.DATA_CENTER,
+			    Block.DATA_CENTER,
+			    Block.DATA_CENTER);
+			table.setColAlignsList(colAlignList);
+			
 		Block tableBlock = table.tableToBlocks();
+		
 		board.setInitialBlock(tableBlock);
 		board.build();
 		String tableString = board.getPreview();
@@ -51,7 +62,7 @@ public class formation {
 	
 	public void update(Course course_1) {
 		//UPDATE
-		Course course_3 = new Course(course_1.getIdCourse(), "java", "description2", 30, false, true, 550.50);
+		Course course_3 = new Course(course_1.getIdCourse(), "test", "description2", 30, false, true, 550.50);
 		boolean sucess_1 = Course_dao.update(course_3);
 		System.out.println("MAJ d'un article dans la db : " + sucess_1 + "\nCourse : " + Course_dao.getById(course_3.getIdCourse()));
 	}
