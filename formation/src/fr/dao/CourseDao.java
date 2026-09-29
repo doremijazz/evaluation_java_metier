@@ -55,9 +55,15 @@ public class CourseDao extends Dao<Course> {
 		return false;
 	}
 
-	private Course createCourseFromResult(ResultSet result) {
-		// TODO Auto-generated method stub
-		return null;
+	private Course createCourseFromResult(ResultSet result) throws SQLException {
+		return new Course(
+				result.getInt("co_id_coourse"),
+				result.getString("co_name"),
+				result.getString("co_description"),
+				result.getInt("co_duration"),
+				result.getBoolean("co_presentiel"),
+				result.getBoolean("co_distanciel"),
+				result.getDouble("co_price"));
 	}
 
 }
