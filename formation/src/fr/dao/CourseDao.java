@@ -15,7 +15,7 @@ import fr.model.Course;
 public class CourseDao extends Dao<Course> {
 
 	@Override
-	public List getAll() {
+	public List<Course> getAll() {
 		List<Course> courses = new ArrayList<>();
 		String sql = "SELECT * FROM f_course";
 		try(Connection connection = getconnection();
@@ -28,7 +28,7 @@ public class CourseDao extends Dao<Course> {
 		}catch (SQLException exception){
 			System.err.println("Erreur lors de la lectures des cours dans la db : " + exception.getMessage());
 		}
-		return null;
+		return courses;
 	}
 
 
