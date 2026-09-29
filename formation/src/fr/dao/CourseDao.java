@@ -49,7 +49,7 @@ public class CourseDao extends Dao<Course> {
 	}
 
 	public int create(Course course) {
-		String sql = "INSERT INTO f_formation (co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO f_course (co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price) VALUES (?,?,?,?,?,?)";
 		try(Connection connection = getconnection();
 				PreparedStatement statement = connection.prepareStatement(sql,
 						Statement.RETURN_GENERATED_KEYS)){
@@ -80,7 +80,7 @@ int 		rows = statement.executeUpdate();
 
 	@Override
 	public boolean update(Course course) {
-		String sql = "UPDATE f_formation SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ?";
+		String sql = "UPDATE f_course SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ?";
 		try(Connection connection = getconnection();
 				PreparedStatement statement = connection.prepareStatement(sql)){
 			statement.setString(1, course.getName());
@@ -106,9 +106,25 @@ int 		rows = statement.executeUpdate();
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		String sql = "DELETE FROM f_course WHERE co_id_course  = ?";
+
+        try (
+            Connection connection = getconnection();
+            PreparedStatement statement = connection.prepareStatement(sql)
+        ) {
+            statement.setInt(1, id);
+            
+            return statement.executeUpdate() == 1;
+
+        } catch (SQLException exception) {
+            System.err.println(
+                    "Erreur lors de la suppression du cours : "
+                    + exception.getMessage()
+            );
+        }
+
+        return false;
+    }
 
 	private Course createCourseFromResult(ResultSet result) throws SQLException {
 		return new Course(
