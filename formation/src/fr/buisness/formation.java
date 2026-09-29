@@ -55,10 +55,7 @@ public class formation {
 		List<Course> courses = new ArrayList<>();
 		for (Course currentCourse : Course_dao.getAll()) {
 			if (currentCourse.getDescription().contains(key)){
-				List<String> course = new ArrayList<String>();
-				course.addAll(Arrays.asList(String.valueOf(currentCourse.getIdCourse()), currentCourse.getName(), currentCourse.getDescription(), String.valueOf(currentCourse.getDuration()), String.valueOf(currentCourse.isPresentiel()),  String.valueOf(currentCourse.isDistanciel()),  String.valueOf(currentCourse.getPrice())));
-				rowsList.add(course);
-				
+				courses.add(currentCourse);
 			}
 		}
 		System.out.println("\nListe des cours avec pour mot clé " + key + " : ");
