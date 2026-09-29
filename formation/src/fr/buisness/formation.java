@@ -52,9 +52,7 @@ public class formation {
 	}
 	
 	public void by_key_word(String key) {
-		System.out.println("\nListe des cours avec pour mot clé " + key + " : ");
-		List<String> headersList = Arrays.asList("ID", "NAME", "DESCRIPTION", "DURATION", "PRESENTIEL", "DISTANCIEL", "PRICE");
-		List<List<String>> rowsList = new ArrayList<List<String>>(); 
+		List<Course> courses = new ArrayList<>();
 		for (Course currentCourse : Course_dao.getAll()) {
 			if (currentCourse.getDescription().contains(key)){
 				List<String> course = new ArrayList<String>();
@@ -62,6 +60,21 @@ public class formation {
 				rowsList.add(course);
 				
 			}
+		}
+		System.out.println("\nListe des cours avec pour mot clé " + key + " : ");
+		display(courses);
+		
+	}
+	public void display(List<Course> courses) {
+		
+		List<String> headersList = Arrays.asList("ID", "NAME", "DESCRIPTION", "DURATION", "PRESENTIEL", "DISTANCIEL", "PRICE");
+		List<List<String>> rowsList = new ArrayList<List<String>>(); 
+		for (Course currentCourse : courses) {
+			
+			List<String> course = new ArrayList<String>();
+			course.addAll(Arrays.asList(String.valueOf(currentCourse.getIdCourse()), currentCourse.getName(), currentCourse.getDescription(), String.valueOf(currentCourse.getDuration()), String.valueOf(currentCourse.isPresentiel()),  String.valueOf(currentCourse.isDistanciel()),  String.valueOf(currentCourse.getPrice())));
+			rowsList.add(course);
+
 		}
 		Board board = new Board(250);
 		Table table = new Table(board, 150, headersList, rowsList);
