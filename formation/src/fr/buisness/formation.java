@@ -65,11 +65,18 @@ public class formation {
 	public void by_modality(String modality) {
 		List<Course> courses = new ArrayList<>();
 		for (Course currentCourse : Course_dao.getAll()) {
-			if (currentCourse.isPresentiel() && modality.contains("presentiel")){
-				courses.add(currentCourse);
-			}else if (currentCourse.isDistanciel() && modality.contains("distanciel")){
-				courses.add(currentCourse);
-			}
+			if (currentCourse == null) continue; // Skip null entries
+
+            boolean isPresentiel = currentCourse.isPresentiel();
+            boolean isDistanciel = currentCourse.isDistanciel();
+
+            if (isPresentiel && !isDistanciel && modality.contains("presentiel")) {
+            	courses.add(currentCourse);
+            } else if (!isPresentiel && isDistanciel && modality.contains("distanciel")) {
+            	courses.add(currentCourse);
+            } else if (isPresentiel && isDistanciel && modality.contains("presentiel et distanciel")) {
+            	courses.add(currentCourse);
+            }
 		}
 		System.out.println("\nListe des cours avec en " + modality + " : ");
 		display(courses);
