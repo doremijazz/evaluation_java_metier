@@ -3,6 +3,9 @@ package fr.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
+
+import fr.model.Course;
 
 public abstract class Dao<T> {
 	private static final String URL =
@@ -15,4 +18,10 @@ public abstract class Dao<T> {
 		return DriverManager.getConnection(URL,USER,PASSWORD);
 		
 	}
+	public abstract List<T> getAll();
+	public abstract T getById(int id);
+	public abstract int create (T t);
+	public abstract boolean update (T t);
+	public abstract boolean delete(int id);
+	
 }
