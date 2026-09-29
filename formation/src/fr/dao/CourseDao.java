@@ -16,7 +16,18 @@ public class CourseDao extends Dao<Course> {
 
 	@Override
 	public List getAll() {
-		// TODO Auto-generated method stub
+		List<Course> courses = new ArrayList<>();
+		String sql = "SELECT * FROM f_course";
+		try(Connection connection = getconnection();
+				PreparedStatement statement = connection.prepareStatement(sql);
+				ResultSet result = statement.executeQuery()){
+			while(result.next()) {
+				courses.add(createCourseFromResult(result));
+			}
+			
+		}catch (SQLException exception){
+			System.err.println("Erreur lors de la lectures des cours dans la db : " + exception.getMessage());
+		}
 		return null;
 	}
 
