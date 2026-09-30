@@ -19,6 +19,13 @@ public abstract class Dao<T> {
 	private static final String USER = "abinet002";
 	private static final String PASSWORD = "";
 	
+	/**
+	 * Etablit une connexion avec la base de données
+	 * 
+	 * @return connexion SQL
+	 * 
+	 * @throws SQLException si la connexion echoue
+	 */
 	protected Connection getconnection() throws SQLException{
 		return DriverManager.getConnection(URL,USER,PASSWORD);
 		
