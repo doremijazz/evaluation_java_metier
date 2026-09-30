@@ -67,7 +67,12 @@ public class main {
 			}else if (input_app == 3) {
 				while (menu_run) {
 					console.display_modality_surch();
-					String modality = (String) input(scan, "string"); 
+					String modality = (String) input(scan, "string");
+					if (!modality.equalsIgnoreCase("presentiel")
+			                && !modality.equalsIgnoreCase("distanciel")
+			                && !modality.equalsIgnoreCase("presentiel et distanciel")) {
+						continue;
+					}
 					formation.by_modality(modality);
 					console.display_run_menu();
 					int input_menu = (int) input(scan, "int");
@@ -81,6 +86,7 @@ public class main {
 				}
 				
 			}else if (input_app == 0) {
+				System.out.println("\nAu revoir !");
 				break;
 				
 			}else {
