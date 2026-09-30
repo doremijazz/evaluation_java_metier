@@ -12,8 +12,20 @@ import java.util.ArrayList;
 
 import fr.model.Course;
 
+/**
+ * DAO permettant de gérer les formation présente dans la base de données
+ * 
+ * Opération réalisées : création, lecture, modification et supression
+ * 
+ * @author BinetA
+ */
 public class CourseDao extends Dao<Course> {
 
+	/**
+	 * Récupére toutes les formations dan sla base de doannées
+	 * 
+	 * @return liste des formations
+	 */
 	@Override
 	public List<Course> getAll() {
 		List<Course> courses = new ArrayList<>();
@@ -32,6 +44,12 @@ public class CourseDao extends Dao<Course> {
 	}
 
 
+	/**
+	 * Recupére un formation d'aprés son identifiant dans la base de données
+	 * 
+	 * @param id identifiant de la formation
+	 * @return formation récupérée
+	 */
 	@Override
 	public Course getById(int id) {
 		String sql = "SELECT co_id_course, co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price FROM f_course WHERE co_id_course = ?";
@@ -50,6 +68,13 @@ public class CourseDao extends Dao<Course> {
 		return null;
 	}
 
+	/**
+	 * Ajoute une formation a la base de données
+	 * 
+	 * @param course formation a ajouter
+	 * 
+	 * @return l'identifiant de la formation ajoutée
+	 */
 	public int create(Course course) {
 		String sql = "INSERT INTO f_course (co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price) VALUES (?,?,?,?,?,?)";
 		try(Connection connection = getconnection();
@@ -80,6 +105,13 @@ public class CourseDao extends Dao<Course> {
 		return 0;
 	}
 
+	/**
+	 * Modifie les information de la formation dans la base de données
+	 * 
+	 * @param course informations a modifier
+	 * 
+	 * @return true si la MAJ est réussie
+	 */
 	@Override
 	public boolean update(Course course) {
 		String sql = "UPDATE f_course SET co_name = ?, co_description = ?, co_duration = ?, co_presentiel = ?, co_distanciel = ?, co_price = ? WHERE co_id_course = ?";
@@ -107,6 +139,13 @@ public class CourseDao extends Dao<Course> {
 		}
 	}
 
+	/**
+	 * Supprime la formation de la base de données
+	 * 
+	 * @param id indentifiant de la formation a supprimer
+	 * 
+	 * @return true si la supression est reussie
+	 */
 	@Override
 	public boolean delete(int id) {
 		String sql = "DELETE FROM f_course WHERE co_id_course  = ?";
@@ -129,6 +168,13 @@ public class CourseDao extends Dao<Course> {
         return false;
     }
 
+	/**
+	 * Créer un nouvel objet formation d'aprés les informations de la base de données
+	 * 
+	 * @param result informations de la base de données
+	 * 
+	 * @return formation
+	 */
 	private Course createCourseFromResult(ResultSet result) throws SQLException {
 		return new Course(
 				result.getInt("co_id_course"),
