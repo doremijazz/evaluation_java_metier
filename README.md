@@ -41,7 +41,7 @@ L'application permet plusieurs opérations sur les formations :
 - by modality : recherche par modalitée d'enseignement
 
 ## Strucure 
-'''text
+```text
 src
 |- fr/
 |   |- app/
@@ -55,4 +55,4 @@ src
 |   |   |_ Console.java
 |   |- model/
 |   |   |_Course.java
-'''
+```
