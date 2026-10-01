@@ -113,3 +113,17 @@ INSERT INTO f_basket (b_id_basket, b_formation_id, b_client_id, b_id_buyer) VALU
 INSERT INTO f_contains (b_id_basket, b_client_id, co_id_course) VALUES
 (1,1,1);
 
+INSERT INTO f_course (co_name, co_description, co_duration, co_presentiel, co_distanciel, co_price) VALUES
+("Java", "Programmation orientée objet avec Java", 35, TRUE, FALSE, 75.50),
+("Python avancé", "Programmation avancée et manipulation de données", 25, TRUE, TRUE, 85.00),
+("MySQL", "Création et gestion de bases de données relationnelles", 20, TRUE, FALSE, 55.90),
+("HTML CSS", "Création et mise en forme de pages web", 15, FALSE, TRUE, 40.00),
+("JavaScript", "Développement interactif pour le web", 25, FALSE, TRUE, 65.50),
+("Git", "Gestion de versions avec Git et GitHub", 10, TRUE, TRUE, 30.00),
+("UML", "Modélisation et conception avec UML", 15, TRUE, FALSE, 45.00),
+("Spring Boot", "Création d'applications web avec Spring Boot", 30, TRUE, TRUE, 95.00),
+("API REST", "Conception et développement d'API REST", 20, FALSE, TRUE, 70.00),
+("Docker", "Création et gestion de conteneurs Docker", 15, FALSE, TRUE, 60.00),
+("Cybersécurité", "Introduction aux principes de la cybersécurité", 25, TRUE, TRUE, 90.00),
+("Linux", "Administration et utilisation d'un système Linux", 20, TRUE, FALSE, 55.00);
+
